@@ -1,5 +1,19 @@
 # Ian MacDonald – Checkers
 
+## Table of Contents
+- [Game Description](#game-description)
+- [Screenshots](#screenshots)
+    - [Starting Position and Movable Pucks](#starting-position-and-movable-pucks)
+    - [Legal Moves](#legal-moves)
+    - [Jumps](#jumps)
+    - [Multi-Jumps](#multi-jumps)
+    - [Getting Kinged](#getting-kinged)
+    - [Winner](#winner)
+- [Technologies Used](#technologies-used)
+- [Challenging Code Parts](#challenging-code-parts)
+- [Link to Game](#link-to-game)
+- [Next Steps](#next-steps)
+
 ## Game Description
 Welcome to my Checkers game, a digital rendition of the classic two-player strategy board game. Checkers is a game that combines simplicity and complexity, making it a timeless favorite for players of all ages.
 
