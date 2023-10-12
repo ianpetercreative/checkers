@@ -1,0 +1,197 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin: 0 auto; 
+}
+
+h1 {
+    font-size: 40px;
+    margin: 20px auto 0;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 28px;
+    margin: 0 auto;
+    font-weight: 700;
+    color: white;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px auto;
+}
+
+#table {
+    width: 75vh;
+    height: 75vh;
+    background-color: rgb(231, 205, 135);
+    border: solid 5px rgb(172, 153, 99);
+    padding: 4px;
+    border-radius: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-board {
+    width: 70vh;
+    height: 70vh;
+    display: flex;
+    border: solid 4px white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(230, 198, 141);
+}
+
+/* div {
+    border: solid 1px white; 
+} */
+
+.row {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.unplayable {
+    background-color: rgb(94, 70, 54);
+}
+
+.black-puck {
+    width: 70%;
+    height: 70%;
+    background-color: rgb(30, 30, 30);
+    border: solid 0.25em white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.red-puck {
+    width: 70%;
+    height: 70%;
+    background-color: rgb(215, 29, 29);
+    border: solid 0.25em white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.red-king, .black-king {
+    cursor: pointer;
+    width: 70%;
+    height: 70%;
+    border: solid 0.25em white;
+    border-radius: 50%;
+    position: relative;
+
+    &::after {
+        content: '';
+        background-image: url('/assets/crown-white.png');
+        background-size: 70% 70%;
+        position: absolute;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+    }
+}
+
+.black-king {
+    background-color: rgb(17, 17, 17);
+}
+
+.red-king {
+    background-color: rgb(174, 29, 29);
+}
+
+
+.movable-puck {
+    background-color: rgb(94, 174, 255);
+    /* border: solid 0.25em rgb(57, 155, 252); */
+    background-size: 50%;
+    /* transition: ease-in-out; */
+}
+
+.destination {
+    background-color: rgba(60, 208, 109, 0.5);
+    cursor: pointer;
+}
+
+.possible-jumped-puck {
+    background-color: rgba(245, 0, 0, 0.5)
+}
+
+.overlay {
+    background-image: url('./assets/crown-white.png');
+    /* width: 50%; */
+}
+
+#winner-popup {
+    box-sizing: content-box;
+    position: fixed; 
+    width: 30%;
+    height: 20%;
+    background-color: rgb(38, 38, 38);
+    border: solid 3px black;
+    padding: 10px; 
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    animation: fadeIn 1s;
+}
+
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 100%;}
+}
+
+button {
+        /* margin: 16px 0 16px; */
+        font-size: 16px;
+        padding: 0.5em 1em; 
+        color: white;
+        background-color: transparent;
+        border: solid 2px white;
+        border-radius: 5px;
+}
+
+button:hover {
+    transition: 0.25s;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    /* border-color: white; */
+}
+
+.blur {
+    transition: 0.5s;
+    filter: blur(5px);
+}
