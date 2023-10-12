@@ -96,6 +96,10 @@ TL;DR the entire game rests on this function's shoulders.
 ![checkformoves2](assets/checkformoves2.png)
 ![checkformoves3](assets/checkformoves3.png)
 
+## Link to Game:
+[Click here to play!](https://ianpetercreative.github.io/checkers/)
+
+
 ## Next Steps 
 While this Checkers game is fully functional, there are several areas where I would like to improve it:
 1. **AI/Computer Opponent**: I would like to introduce a single player mode for a user to play against a computer.
