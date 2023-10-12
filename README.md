@@ -1,5 +1,4 @@
 # Ian MacDonald – Checkers
-=====
 
 ## Game Description
 Welcome to my Checkers game, a digital rendition of the classic two-player strategy board game. Checkers is a game that combines simplicity and complexity, making it a timeless favorite for players of all ages.
@@ -66,7 +65,40 @@ When a player eliminates their opponent's final puck, or prevents them from maki
 
 
 ## Technologies Used
+### HTML: 
+The game's basic structure and layout were built using HTML, providing the foundation for the UI.
+
+### CSS:
+CSS was used for styling and customizing the game's appearance. This includes defining the game board, puck design, and pop-up messages' visual elements.
+
+### JavaScript:
+The majority of the game logic and interactivity was implemented in JavaScript. JavaScript controls puck movement, player turns, move validations, multi-jump sequences, and winning conditions. It also handles highlighting valid moves and managing the game's state.
+
+### Web Development:
+The game leverages core web development fundamentals, including the Document Object Model (DOM) for interacting with web pages and event handling for user interactions.
 
 ## Challenging Code Parts 
+The checkForMoves function was particularly challenging because it required a comprehensive understanding of the game's rules and multiple conditions. It has to determine which moves are valid, including puck movement and jump sequences, while considering the player's current position, the status of the game board, and the type of piece (standard or King).
+
+Checkers has a unique set of rules involving diagonal movement, mandatory jump sequences, and the promotion of pieces to Kings. Implementing and handling all of these rules within a single function was a demanding task.
+
+The function has to calculate and identify all possible moves and jumps for a given player's piece while ensuring they followed the game's intricate rules. This included checking for the availability of jumps, prioritizing jumps when multiple options were present, and preventing invalid moves.
+
+When a piece had multiple jumps available, the checkForMoves function had to trigger multiple recursive calls to handle multi-jump sequences. Coordinating these recursive calls without losing track of game state, the chosen puck, and player turn was a complex task.
+
+Highlighting valid moves and jumps on the game board in real-time based on the player's selection required responsive DOM manipulation. The code had to be carefully crafted to remove previous highlights, display new ones, and maintain a visually clear and intuitive UI for the best possible UX.
+
+The checkForMoves function was challenging due to the need to understand, interpret, and implement the multifaceted rules of Checkers while creating a responsive, interactive, and bug-free gameplay experience. It demanded meticulous planning, testing, and fine-tuning to ensure the game played smoothly and correctly, making it the most complex part of the development process.
+
+TL;DR the entire game rests on this function's shoulders.
+
+![checkformoves1](assets/checkformoves1.png)
+![checkformoves2](assets/checkformoves2.png)
+![checkformoves3](assets/checkformoves3.png)
 
 ## Next Steps 
+While this Checkers game is fully functional, there are several areas where I would like to improve it:
+1. **AI/Computer Opponent**: I would like to introduce a single player mode for a user to play against a computer.
+2. **Multiplayer via Online**: I would like to add an online multiplayer functionality that allows a user to compete with anyone in the world. 
+3. **Responsive Design**: Due to the nature of the game, checkers can be difficult to translate to smaller devices. I would like to optimize the experience for different screen sizes and devices. 
+

@@ -15,14 +15,14 @@ const title = document.getElementById('title');
 /*----- state variables -----*/
 // starting game state: 
 const gameBoard = [
-  [null, 0, null, 0, null, 0, null, 0],
+  [null, -1, null, -1, null, -1, null, -1],
+  [-1, null, -1, null, -1, null, -1, null],
+  [null, -1, null, -1, null, -1, null, -1],
   [0, null, 0, null, 0, null, 0, null],
   [null, 0, null, 0, null, 0, null, 0],
-  [0, null, 0, null, -1, null, 0, null],
-  [null, 0, null, 1, null, 0, null, 0],
-  [0, null, 0, null, 0, null, 0, null],
-  [null, 0, null, 0, null, 0, null, 0],
-  [0, null, 0, null, 0, null, 0, null],
+  [1, null, 1, null, 1, null, 1, null],
+  [null, 1, null, 1, null, 1, null, 1],
+  [1, null, 1, null, 1, null, 1, null],
 ];
 
 // track player turn and winner: 
