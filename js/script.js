@@ -55,7 +55,7 @@ let moveToCol = null;
 
 /*----- event listeners -----*/
 
-
+// click listener on the game board 
 gameBoardEl.addEventListener('click', function clickHandler(evt) {
   // record click information to determine what the click should do with the information 
   const clickedEl = evt.target;
@@ -146,8 +146,8 @@ gameBoardEl.addEventListener('click', function clickHandler(evt) {
 
 /*----- functions -----*/
 
+// iterate over gameBoad to place pucks
 function render() {
-  // iterate over gameBoad to place pucks
   for (let rowIdx = 0; rowIdx < gameBoard.length; rowIdx++) {
     const row = gameBoard[rowIdx];
     const squaresInRow = rowEls[rowIdx].querySelectorAll('.square');
@@ -199,7 +199,7 @@ function changePlayer() {
   playerTurn *= -1;
 }
 
-
+// check total pucks for the current player and return a winner if there are none 
 function checkForWinner() {
   // gather the players regular pucks and kings 
   playerPucks = getAllPlayerPucks(playerTurn);
@@ -240,10 +240,8 @@ function checkForWinner() {
 
 }
 
-
-
+// calculate and record the location of the current player's normal pucks 
 function getAllPlayerPucks(player) {
-  // function used to calculate the current player's pucks 
   playerPucks = [];
 
   // iterate over the gameBoard and gather the pucks into the global playerPucks array 
@@ -257,6 +255,7 @@ function getAllPlayerPucks(player) {
   return playerPucks;
 }
 
+// calculate and record the location of the current player's kings
 function getAllPlayerKings(player) {
   // function used to calculate the current player's pucks 
   playerKings = [];
@@ -625,6 +624,7 @@ function jumpPuck(selectedPuck, oldRow, oldCol, newRow, newCol) {
   const jumpedRow = (oldRow + newRow) / 2;
   const jumpedCol = (oldCol + newCol) / 2;
   const destinationSquare = document.querySelector(`[data-row="${newRow}"][data-col="${newCol}"]`);
+  const jumpedSquare = document.querySelector(`[data-row="${jumpedRow}"][data-col="${jumpedCol}"]`);
 
   // move the puck to the destination
   destinationSquare.appendChild(selectedPuck);
@@ -634,8 +634,10 @@ function jumpPuck(selectedPuck, oldRow, oldCol, newRow, newCol) {
   gameBoard[newRow][newCol] = puckValue;
   // set the old square to empty 
   gameBoard[oldRow][oldCol] = 0;
-  // set the jumped square to empty 
+  // set the jumped square to empty in state 
   gameBoard[jumpedRow][jumpedCol] = 0;
+  // also set the innerHTML to empty so that the puck immediately disappears 
+  jumpedSquare.innerHTML = ''; 
   // check for multijumps 
   checkForMultiJump(newRow, newCol);
 }
@@ -718,7 +720,7 @@ function checkForMultiJump(row, col) {
   }
 }
 
-
+// if a player's puck reaches the opposite end of the board and is not already a king, then turn it into a king 
 function checkForKings() {
   // check for either player's "pucks" reaching a square opposite their starting end 
   // apply visual update 
@@ -735,11 +737,10 @@ function checkForKings() {
   }
 }
 
-
+// start the game 
 function initialize() {
-  // THIS IS THE CODE THAT WILL INITIALIZE THE GAME AND SET THE STATE OF THE GAME
   render();
 }
 
-
+// invoke initialize to begin the game on load 
 initialize();
