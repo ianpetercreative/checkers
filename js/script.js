@@ -233,31 +233,6 @@ function checkForWinner() {
     }
     return true;
 
-  } else if (movablePucks.length === 0 && jumpsAvailable.length === 0 && multiJumps.length === 0){
-
-    winner = playerTurn * -1;
-
-    // declare winner 
-    // popup message occurs
-    // blur the background around the popup 
-    // button in the popup will restart the game 
-    if (winner === 1) {
-      winnerMsg.textContent = `Red wins!`
-      tableEl.classList.add('blur')
-      playerTurnMsg.classList.add('blur')
-      title.classList.add('blur')
-      winnerPopup.style.display = "flex";
-
-    } else if (winner === -1) {
-      winnerMsg.textContent = `Black wins!`
-      tableEl.classList.add('blur')
-      playerTurnMsg.classList.add('blur')
-      title.classList.add('blur')
-      winnerPopup.style.display = "flex";
-
-    }
-    return true;
-
   } else {
     // if the current player still has pucks/kings, render the board and continue 
     render();
