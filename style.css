@@ -8,10 +8,12 @@ body {
     background: radial-gradient(circle, #509163, #495f41);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     text-align: center;
-    margin: 0 auto; 
-    color: white; 
+    margin: 0 auto;
+    color: white;
 }
 
 h1 {
@@ -60,7 +62,8 @@ h3 {
 }
 
 
-.row, .square {
+.row,
+.square {
     height: 100%;
     width: 100%;
     display: flex;
@@ -85,7 +88,10 @@ h3 {
     background-color: #cd4631;
 }
 
-.black-puck, .red-puck, .red-king, .black-king {
+.black-puck,
+.red-puck,
+.red-king,
+.black-king {
     cursor: pointer;
     width: 70%;
     height: 70%;
@@ -95,16 +101,17 @@ h3 {
     opacity: 100%;
 }
 
-.red-king::after, .black-king::after {
-        content: '';
-        background-image: url('/assets/crown-white.png');
-        background-size: 70% 70%;
-        position: absolute;
-        background-position: center;
-        width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-    }
+.red-king::after,
+.black-king::after {
+    content: '';
+    background-image: url('./assets/crown-white.png');
+    background-size: 70% 70%;
+    position: absolute;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+}
 
 
 .black-king {
@@ -121,10 +128,10 @@ h3 {
     background-size: 50%;
 }
 
-.movable-puck > div:hover {
-    transition: 0.15s; 
+.movable-puck>div:hover {
+    transition: 0.15s;
     width: 75%;
-    height: 75%; 
+    height: 75%;
 }
 
 .destination {
@@ -141,18 +148,14 @@ h3 {
     background-color: rgba(245, 0, 0, 0.5)
 }
 
-.overlay {
-    background-image: url('./assets/crown-white.png');
-}
-
 #winner-popup {
     box-sizing: content-box;
-    position: fixed; 
+    position: fixed;
     width: 30%;
     height: 20%;
     background-color: rgb(38, 38, 38);
     border: solid 3px black;
-    padding: 10px; 
+    padding: 10px;
     margin: auto;
     top: 0;
     right: 0;
@@ -168,7 +171,7 @@ h3 {
 
 button {
     font-size: 16px;
-    padding: 0.5em 1em; 
+    padding: 0.5em 1em;
     color: white;
     background-color: transparent;
     border: solid 2px white;
@@ -190,6 +193,11 @@ button:hover {
 
 
 @keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 100%;}
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100%;
+    }
 }
